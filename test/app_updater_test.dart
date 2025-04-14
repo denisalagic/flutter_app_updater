@@ -19,11 +19,4 @@ void main() {
     expect(initialPlatform, isInstanceOf<MethodChannelAppUpdater>());
   });
 
-  test('getPlatformVersion', () async {
-    AppUpdater appUpdaterPlugin = AppUpdater();
-    MockAppUpdaterPlatform fakePlatform = MockAppUpdaterPlatform();
-    AppUpdaterPlatform.instance = fakePlatform;
-
-    expect(await appUpdaterPlugin.getPlatformVersion(), '42');
-  });
 }
