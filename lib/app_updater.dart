@@ -11,4 +11,11 @@ class AppUpdater {
   static Future<String?> getAppVersion() async {
     return await _channel.invokeMethod('getAppVersion');
   }
+
+  static Future<bool> installApk(String apkPath) async {
+    final bool result = await _channel.invokeMethod('installApk', {
+      'apkPath': apkPath,
+    });
+    return result;
+  }
 }
